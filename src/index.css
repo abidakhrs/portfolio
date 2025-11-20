@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* You can keep your custom styles here after Tailwind directives */
+@layer base {
+  :root {
+    @apply bg-white text-gray-900;
+  }
+  
+  .dark {
+    @apply bg-gray-900 text-white;
+  }
+}
+
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
