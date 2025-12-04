@@ -5,7 +5,7 @@ interface SectionProps {
   className?: string;
   id?: string;
   background?: 'light' | 'dark' | 'gradient';
-  padding?: 'sm' | 'md' | 'lg' | 'xl';
+  hasTopMargin?: boolean;
 }
 
 const Section: React.FC<SectionProps> = ({
@@ -13,25 +13,17 @@ const Section: React.FC<SectionProps> = ({
   className = '',
   id,
   background = 'light',
-  padding = 'xl'
 }) => {
   const backgroundClass = {
-    light: 'bg-white dark:bg-gray-900',
-    dark: 'bg-gray-50 dark:bg-gray-950',
-    gradient: 'bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-950'
-  }[background];
-
-  const paddingClass = {
-    sm: 'py-8',
-    md: 'py-12',
-    lg: 'py-16',
-    xl: 'py-20'
-  }[padding];
+    light: 'bg-white dark:bg-gray-900 mt-16 lg:mt-20',
+    dark: 'bg-gray-50 dark:bg-gray-950 mt-3 sm:mt-4 md:mt-6 lg:mt-8',
+    gradient: 'bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-950 mt-3 sm:mt-4 md:mt-6 lg:mt-8'
+  }[background];  
 
   return (
-    <section 
+    <section
       id={id}
-      className={`${backgroundClass} ${paddingClass} ${className}`}
+      className={`${backgroundClass} ${className}`}
     >
       {children}
     </section>

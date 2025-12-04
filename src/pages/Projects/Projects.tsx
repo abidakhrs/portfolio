@@ -6,7 +6,7 @@ import Heading from '../../components/Layout/Heading';
 
 const ProjectsPage = () => {
   return (
-    <Section>
+    <Section >
       <Container>
         <Heading title="Projects" center></Heading>
         <ProjectsComponent projects={mockProjects} />

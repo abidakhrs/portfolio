@@ -40,7 +40,7 @@ const About = () => {
   return (
     <>
       {/* Main About Page Heading */}
-      <Section>
+      <Section >
         <Container>
           <Heading
             title="About Me"
@@ -131,7 +131,7 @@ const About = () => {
       </Section>
 
       {/* Section 2: Education Timeline */}
-      <Section>
+      <Section hasTopMargin={true}>
         <Container>
           <Heading
             title="Education"
@@ -151,7 +151,7 @@ const About = () => {
       </Section>
 
       {/* Section 3: Achievements and Certifications */}
-      <Section>
+      <Section hasTopMargin={true}>
         <Container>
           <Heading
             title="Achievements & Certifications"

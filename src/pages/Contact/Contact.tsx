@@ -67,7 +67,7 @@ const Contact = () => {
   const closeAlert = () => setAlert(null);
 
   return (
-    <Section>
+    <Section >
       <Container maxWidth="3xl">
         <Heading
           title="Hire Me"

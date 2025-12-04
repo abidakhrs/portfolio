@@ -16,7 +16,7 @@ const Home = () => {
 
   return (
     <>
-      <Section padding="lg">
+      <Section>
         <Container>
           <Greeting
             name="Abid"

@@ -4,7 +4,7 @@ import Heading from '../../components/Layout/Heading';
 
 const Services = () => {
   return (
-    <Section>
+    <Section >
       <Container>
         <Heading
           title="Services"
