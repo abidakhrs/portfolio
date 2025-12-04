@@ -1,9 +1,18 @@
+import Section from '../../components/Layout/Section';
+import Container from '../../components/Layout/Container';
+import Heading from '../../components/Layout/Heading';
+
 const Services = () => {
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold mb-4">Services</h1>
-      <p>Explore the services I offer.</p>
-    </div>
+    <Section>
+      <Container>
+        <Heading
+          title="Services"
+          description="Explore the services I offer."
+          center={true}
+        />
+      </Container>
+    </Section>
   );
 };
 

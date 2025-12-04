@@ -12,6 +12,7 @@ const Greeting = ({ name, description, image }: GreetingProps) => {
     "Food Delivery Rider 🤡",
     "Fullstack Dev Wannabe 💯",
     "Design Copycat 😼",
+    "You Name It 🤵",
   ];
 
   return (
@@ -28,9 +29,9 @@ const Greeting = ({ name, description, image }: GreetingProps) => {
               words={roles}
               loop
               cursor
-              typeSpeed={70}
-              deleteSpeed={50}
-              delaySpeed={1500}
+              typeSpeed={100}
+              deleteSpeed={80}
+              delaySpeed={1000}
             />
           </span>
         </h2>

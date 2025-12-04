@@ -2,6 +2,13 @@ import type { JSX } from 'react';
 import type { Project } from '../../data/projects';
 import { FaReact, FaNodeJs, FaPython, FaPhp, FaJs, FaJava, FaAngular, FaVuejs, FaDatabase, FaFigma, FaGit, FaGithub, FaDocker, FaAws, FaHtml5, FaCss3Alt } from 'react-icons/fa';
 import { SiTypescript, SiMongodb, SiPostgresql, SiFirebase, SiRedux, SiSocketdotio, SiDjango, SiChartdotjs, SiPwa } from 'react-icons/si';
+import Card from '../UI/Card';
+import IconTag from '../UI/IconTag';
+import Button from '../UI/Button';
+import Section from '../Layout/Section';
+import Container from '../Layout/Container';
+import Heading from '../Layout/Heading';
+import { useState, useEffect, useMemo } from 'react';
 
 interface ProjectsProps {
   projects: Project[];
@@ -165,26 +172,80 @@ const getTechIcon = (tech: string) => {
 };
 
 const Projects = ({ projects, onSeeMore }: ProjectsProps) => {
-  // Show only the first 3 projects if onSeeMore is provided (Home page)
-  // Show all projects if onSeeMore is not provided (Projects page)
-  const displayedProjects = onSeeMore ? projects.slice(0, 3) : projects;
+  // Memoize the projects to avoid recreation on each render
+  const allProjects = useMemo(() => {
+    // Show only the first 3 projects if onSeeMore is provided (Home page)
+    // Show all projects if onSeeMore is not provided (Projects page)
+    return onSeeMore ? projects.slice(0, 3) : projects;
+  }, [projects, onSeeMore]);
+
+  // Memoize categories to avoid recreation on each render
+  const categories = useMemo(() => {
+    return ['All', ...Array.from(new Set(projects.map(project => project.category)))];
+  }, [projects]);
+
+  // State for filtering
+  const [selectedCategory, setSelectedCategory] = useState<string>('All');
+  const [filteredProjects, setFilteredProjects] = useState<Project[]>(allProjects);
+
+  // Apply filtering
+  useEffect(() => {
+    if (selectedCategory === 'All') {
+      setFilteredProjects(allProjects);
+    } else {
+      setFilteredProjects(allProjects.filter(project => project.category === selectedCategory));
+    }
+  }, [selectedCategory, allProjects]);
 
   return (
-    <section className="py-16 bg-gray-50 dark:bg-gray-950">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">
-            {onSeeMore ? 'Featured Projects' : 'All Projects'}
-          </h2>
-          <div className="h-1 w-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mx-auto"></div>
-        </div>
+    <Section>
+      <Container>
+        {/* Show Featured Projects title when on home page */}
+        {onSeeMore && (
+          <div className="mb-12">
+            <Heading
+              title="Featured Projects"
+              center={true}
+            />
+          </div>
+        )}
+
+        {/* Category Filter - Only show on projects page (not on home page) */}
+        {!onSeeMore && (
+          <div className="flex justify-between items-center mb-8">
+            <div className="flex items-center space-x-4">
+              {/* Showing result text for filter at top left, opposite of dropdown */}
+              {selectedCategory !== 'All' && (
+                <h3 className="text-lg font-medium text-gray-700 dark:text-gray-300">
+                  Showing: {selectedCategory}
+                </h3>
+              )}
+            </div>
+            <div className="relative">
+              <select
+                value={selectedCategory}
+                onChange={(e) => setSelectedCategory(e.target.value)}
+                className="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg py-2 px-4 pr-8 focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none"
+              >
+                {categories.map(category => (
+                  <option key={category} value={category}>
+                    {category}
+                  </option>
+                ))}
+              </select>
+              {/* Single Dropdown arrow */}
+              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 dark:text-gray-300">
+                <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                  <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        )}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {displayedProjects.map((project) => (
-            <div
-              key={project.id}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1"
-            >
+          {filteredProjects.map((project) => (
+            <Card key={project.id}>
               <div className="h-48 overflow-hidden">
                 <img
                   src={project.image}
@@ -207,34 +268,30 @@ const Projects = ({ projects, onSeeMore }: ProjectsProps) => {
                   {project.technologies.map((tech, index) => {
                     const { icon, color } = getTechIcon(tech);
                     return (
-                      <div
+                      <IconTag
                         key={index}
-                        className={`${color} flex items-center gap-1 bg-gray-100 dark:bg-gray-600 px-2 py-1 rounded-full text-sm`}
-                      >
-                        {icon}
-                        <span className="text-gray-700 dark:text-gray-200">{tech}</span>
-                      </div>
+                        icon={icon}
+                        text={tech}
+                        color={color}
+                      />
                     );
                   })}
                 </div>
               </div>
-            </div>
+            </Card>
           ))}
         </div>
 
         {/* See More Button - only show on home page */}
-        {onSeeMore ? (
+        {onSeeMore && (
           <div className="text-center mt-12">
-            <button
-              onClick={onSeeMore}
-              className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 shadow-lg"
-            >
+            <Button onClick={onSeeMore}>
               See More Projects
-            </button>
+            </Button>
           </div>
-        ) : null}
-      </div>
-    </section>
+        )}
+      </Container>
+    </Section>
   );
 };
 

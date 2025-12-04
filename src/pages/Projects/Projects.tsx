@@ -1,14 +1,17 @@
 import ProjectsComponent from '../../components/Projects/Projects';
 import { mockProjects } from '../../data/projects';
+import Section from '../../components/Layout/Section';
+import Container from '../../components/Layout/Container';
+import Heading from '../../components/Layout/Heading';
 
 const ProjectsPage = () => {
   return (
-    <div className="container mx-auto px-4 py-12">
-      <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-bold mb-8 text-gray-800 dark:text-white text-center">My Projects</h1>
+    <Section>
+      <Container>
+        <Heading title="Projects" center></Heading>
         <ProjectsComponent projects={mockProjects} />
-      </div>
-    </div>
+      </Container>
+    </Section>
   );
 };
 

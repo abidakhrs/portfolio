@@ -1,5 +1,8 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
+import Section from '../../components/Layout/Section';
+import Container from '../../components/Layout/Container';
+import Heading from '../../components/Layout/Heading';
 
 interface AlertState {
   type: "success" | "error";
@@ -27,7 +30,7 @@ const Contact = () => {
     setIsSubmitting(true);
 
     const serviceId = "service_o4iuvdp";
-    const templateId = "template_12suks6";
+    const templateId = "template_1mlc41n";
     const publicKey = "xxUV7_e-DLwMj2fr_";
 
     const templateParams = {
@@ -39,7 +42,8 @@ const Contact = () => {
 
     emailjs
       .send(serviceId, templateId, templateParams, publicKey)
-      .then(() => {
+      .then((response) => {
+        console.log('EmailJS Response:', response);
         setAlert({
           type: "success",
           message:
@@ -47,7 +51,8 @@ const Contact = () => {
         });
         setFormData({ name: "", email: "", message: "" });
       })
-      .catch(() => {
+      .catch((error) => {
+        console.error('EmailJS Error:', error);
         setAlert({
           type: "error",
           message:
@@ -62,15 +67,13 @@ const Contact = () => {
   const closeAlert = () => setAlert(null);
 
   return (
-    <div className="container mx-auto px-4 py-12">
-      <div className="max-w-3xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-bold mb-8 text-gray-800 dark:text-white text-center">
-          Hire Me
-        </h1>
-        <p className="text-lg text-gray-600 dark:text-gray-300 text-center mb-8">
-          Interested in working together? Fill out the form below and I'll get
-          back to you as soon as possible.
-        </p>
+    <Section>
+      <Container maxWidth="3xl">
+        <Heading
+          title="Hire Me"
+          description="Interested in working together? Fill out the form below and I'll get back to you as soon as possible."
+          center={true}
+        />
 
         <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8">
           <form className="space-y-6" onSubmit={handleSubmit}>
@@ -197,8 +200,8 @@ const Contact = () => {
             </div>
           </div>
         )}
-      </div>
-    </div>
+      </Container>
+    </Section>
   );
 };
 

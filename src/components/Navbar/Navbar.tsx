@@ -12,13 +12,13 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white dark:bg-gray-900 text-gray-800 dark:text-white p-4 sticky top-0 z-50 shadow-md dark:shadow-lg dark:shadow-gray-800">
+    <nav className="bg-white dark:bg-gray-900 text-gray-800 dark:text-white py-4 px-4 sm:px-6 sticky top-0 z-50 shadow-md dark:shadow-lg dark:shadow-gray-800 min-h-16">
       <div className="container mx-auto">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center h-12 sm:h-14">
           <h1
-            className="text-3xl sm:text-4xl 
-                       font-bold 
-                       bg-gradient-to-r from-blue-400 via-indigo-500 to-cyan-400 
+            className="text-2xl sm:text-3xl md:text-4xl
+                       font-bold
+                       bg-gradient-to-r from-blue-400 via-indigo-500 to-cyan-400
                        bg-clip-text text-transparent"
           >
             Abid Akhras
@@ -124,8 +124,8 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 pb-4">
-            <ul className="flex flex-col space-y-2">
+          <div className="md:hidden mt-2 pt-4 pb-2">
+            <ul className="flex flex-col space-y-1">
               <li>
                 <Link
                   to="/"
