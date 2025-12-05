@@ -6,13 +6,13 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-center space-x-8">
           <a
-            href="#"
+            href="https://github.com/abidakhrs"
             className="text-blue-600 dark:text-blue-400 hover:text-purple-600 dark:hover:text-purple-400 text-2xl transition-all duration-300 transform hover:scale-110"
           >
             <FaGithub />
           </a>
           <a
-            href="#"
+            href="https://www.linkedin.com/in/abidakhras/"
             className="text-blue-600 dark:text-blue-400 hover:text-purple-600 dark:hover:text-purple-400 text-2xl transition-all duration-300 transform hover:scale-110"
           >
             <FaLinkedin />

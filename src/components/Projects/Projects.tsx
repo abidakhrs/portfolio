@@ -202,7 +202,7 @@ const Projects = ({ projects, onSeeMore }: ProjectsProps) => {
       <Container>
         {/* Show Featured Projects title when on home page */}
         {onSeeMore && (
-          <div className="mb-12">
+          <div className="mb-3">
             <Heading
               title="Featured Projects"
               center={true}

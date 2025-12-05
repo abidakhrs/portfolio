@@ -12,52 +12,42 @@ export interface TimelineItem {
 export const mockTimelineData: TimelineItem[] = [
   {
     id: 1,
-    date: "2022 - Present",
-    title: "Senior Developer",
-    subtitle: "Tech Company",
-    companyInitials: "TC",
-    companyColor: "bg-gradient-to-r from-blue-500 to-purple-600",
-    description: "Leading development of web applications using React, TypeScript, and Node.js. Mentoring junior developers and implementing best practices.",
-    image: "/company1.jpg"
+    date: "August 2025 - January 2026",
+    title: "T&T Intern - Innovation & Cloud Development Centre (Software Development)",
+    subtitle: "Deloitte Consulting",
+    companyInitials: "DC",
+    companyColor: "bg-gradient-to-r from-blue-700 to-teal-500", // Custom color for Deloitte
+    description: "Developed a scalable POC banking application using Micro front-end architecture and React Native, enhancing modularity and user experience. Collaborated with professional mentors and team members to deliver high-quality, maintainable features. Streamlined development workflow using Git for version control.",
+    image: "/deloitte.jpg" // Placeholder
   },
   {
     id: 2,
-    date: "2020 - 2022",
-    title: "Frontend Developer",
-    subtitle: "Startup Inc.",
-    companyInitials: "SI",
-    companyColor: "bg-gradient-to-r from-green-500 to-teal-500",
-    description: "Developed responsive user interfaces for client projects. Implemented modern design systems and improved user experience.",
-    image: "/company2.jpg"
+    date: "May 2023 - August 2023",
+    title: "Software Developer",
+    subtitle: "CyberSphere Solution Sdn. Bhd",
+    companyInitials: "CS",
+    companyColor: "bg-gradient-to-r from-green-500 to-lime-600", // Custom color for CyberSphere
+    description: "Developed DietMate, an innovative food diary and diet management web application. Coordinated task distribution and project timelines among team members. Delivered monthly progress reports and updates in team meetings.",
+    image: "/cybersphere.jpeg" // Placeholder
   },
   {
     id: 3,
-    date: "2019 - 2020",
-    title: "Junior Web Developer",
-    subtitle: "Digital Agency",
-    companyInitials: "DA",
-    companyColor: "bg-gradient-to-r from-yellow-500 to-orange-500",
-    description: "Built and maintained client websites using HTML, CSS, JavaScript, and WordPress. Collaborated with design team to implement UI/UX concepts.",
-    image: "/company3.jpg"
+    date: "January 2023 - March 2023",
+    title: "Web Developer Part Time",
+    subtitle: "FIFWAY System Sdn. Bhd.",
+    companyInitials: "FS",
+    companyColor: "bg-gradient-to-r from-orange-500 to-yellow-600", // Custom color for FIFWAY System
+    description: "Developed an administration system for disaster management. Assisted in client meetings and user training sessions to gather requirements and ensure smooth system adoption. Prepared comprehensive user manuals tailored for different user groups.",
+    image: "/fifway.png" // Placeholder
   },
   {
     id: 4,
-    date: "2018 - 2019",
-    title: "Freelance Developer",
-    subtitle: "Self-Employed",
-    companyInitials: "SE",
-    companyColor: "bg-gradient-to-r from-red-500 to-pink-500",
-    description: "Provided web development services for small businesses. Specialized in creating custom WordPress websites and e-commerce solutions.",
-    image: "/company4.jpg"
-  },
-  {
-    id: 5,
-    date: "2017 - 2018",
-    title: "Web Development Intern",
-    subtitle: "Innovate Solutions",
-    companyInitials: "IS",
-    companyColor: "bg-gradient-to-r from-indigo-500 to-blue-500",
-    description: "Assisted in developing and testing web applications. Gained hands-on experience with JavaScript frameworks and responsive design.",
-    image: "/company5.jpg"
+    date: "July 2022 - January 2023",
+    title: "Web Developer Intern",
+    subtitle: "FIFWAY System Sdn. Bhd.",
+    companyInitials: "FS",
+    companyColor: "bg-gradient-to-r from-orange-500 to-yellow-600", // Reusing color for same company
+    description: "Designed and developed InfoBencanaJKMv2, a web-based administration system built with Bootstrap, jQuery, HTML, CSS, and JavaScript. Implemented backend functionality using PHP and MySQL. Collaborated closely with my professional team lead to refine system features.",
+    image: "/fifway.png" // Placeholder
   }
 ];

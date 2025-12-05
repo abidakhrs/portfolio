@@ -60,7 +60,7 @@ const Timeline = ({ items }: TimelineProps) => {
                         <img
                           src={item.image}
                           alt={item.subtitle}
-                          className="w-full h-48 object-cover rounded-xl shadow-lg"
+                          className="w-full h-64 object-cover rounded-xl shadow-lg"
                         />
                       </div>
                     )}
@@ -113,7 +113,7 @@ const Timeline = ({ items }: TimelineProps) => {
                         <img
                           src={item.image}
                           alt={item.subtitle}
-                          className="w-full h-48 object-cover rounded-xl shadow-lg"
+                          className="w-full h-64 object-cover rounded-xl shadow-lg"
                         />
                       </div>
                     )}

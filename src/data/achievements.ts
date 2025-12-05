@@ -12,61 +12,52 @@ export interface AchievementItem {
 export const mockAchievementsData: AchievementItem[] = [
   {
     id: 1,
-    title: "AWS Certified Solutions Architect",
-    issuer: "Amazon Web Services",
-    date: "2023",
-    description: "Validated expertise in designing and deploying scalable, highly available systems on AWS.",
-    icon: "/achievements/aws-logo.png",
-    credentialId: "AWS-123456",
-    skillTags: ["Cloud Architecture", "AWS", "Scalability"]
+    title: "CCNA: Introduction to Networks",
+    issuer: "Cisco Networking Academy",
+    date: "April 2022",
+    description:
+      "Completed foundational networking certification covering IPv4, routing, switching, network services, and essential connectivity principles.",
+    icon: "/achievements/cisco.png",
+    skillTags: ["Networking", "IPv4", "Routing", "Switching", "Cisco"]
   },
   {
     id: 2,
-    title: "Google Professional Cloud Developer",
-    issuer: "Google Cloud",
-    date: "2022",
-    description: "Demonstrated ability to design, build, test, and maintain cloud applications on Google Cloud Platform.",
-    icon: "/achievements/google-cloud-logo.png",
-    credentialId: "GPCD-789012",
-    skillTags: ["Cloud Development", "GCP", "Serverless"]
+    title: "CCNA: Enterprise Networking, Security & Automation",
+    issuer: "Cisco Networking Academy",
+    date: "November 2024",
+    description:
+      "Validated advanced enterprise networking capabilities including automation, security, WAN technologies, and scalable network operations.",
+    icon: "/achievements/cisco.png",
+    skillTags: ["Enterprise Networking", "Security", "Automation", "WAN", "Cisco"]
   },
   {
     id: 3,
-    title: "Certified Kubernetes Administrator (CKA)",
-    issuer: "Cloud Native Computing Foundation",
-    date: "2023",
-    description: "Proven competency in Kubernetes cluster operations, including deployment, monitoring, and troubleshooting.",
-    icon: "/achievements/kubernetes-logo.png",
-    credentialId: "CKA-345678",
-    skillTags: ["Kubernetes", "DevOps", "Containerization"]
+    title: "Certified AI Fundamentals",
+    issuer: "IBM",
+    date: "2024",
+    description:
+      "Gained foundational skills in artificial intelligence concepts, machine learning models, and data-driven problem solving.",
+    icon: "/achievements/ibm.png",
+    skillTags: ["AI", "Machine Learning", "Data Science", "IBM"]
   },
   {
     id: 4,
-    title: "Microsoft Certified: Azure Developer Associate",
-    issuer: "Microsoft",
-    date: "2021",
-    description: "Validated skills in designing and building cloud applications and services on Microsoft Azure.",
-    icon: "/achievements/azure-logo.png",
-    credentialId: "AZ-204-901234",
-    skillTags: ["Azure", "Cloud Development", "DevOps"]
+    title: "FYPro Finalist Bronze Award",
+    issuer: "UMPSA Computing Faculty",
+    date: "March 2025",
+    description:
+      "Awarded Bronze for outstanding performance in the Final Year Project competition, recognizing innovation and technical execution.",
+    icon: "/achievements/award.png",
+    skillTags: ["FYP", "Software Engineering", "Innovation"]
   },
   {
     id: 5,
-    title: "Oracle Certified Professional: Java SE Developer",
-    issuer: "Oracle",
-    date: "2020",
-    description: "Demonstrated expertise in Java programming, including object-oriented principles, data structures, and algorithms.",
-    icon: "/achievements/oracle-logo.png",
-    credentialId: "OCP-JAVA-567890",
-    skillTags: ["Java", "Object-Oriented Programming", "Algorithms"]
+    title: "Anugerah Pencapaian Cemerlang Kategori Universiti",
+    issuer: "MOHE-MDEC GOT",
+    date: "July 2024",
+    description:
+      "Recognized at the national level for exceptional academic and extracurricular performance in the university category.",
+    icon: "/achievements/malaysia.png",
+    skillTags: ["National Achievement", "Excellence Award", "Leadership"]
   },
-  {
-    id: 6,
-    title: "Top Contributor Award",
-    issuer: "Open Source Community",
-    date: "2022",
-    description: "Recognized for significant contributions to various open source projects and documentation.",
-    icon: "/achievements/open-source-logo.png",
-    skillTags: ["Open Source", "Collaboration", "Documentation"]
-  }
 ];
