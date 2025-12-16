@@ -63,42 +63,42 @@ const About = () => {
 >
   <SwiperSlide>
     <img
-      src="/carousel1.jpg"
+      src="carousel1.jpg"
       alt="Carousel 1"
       className="w-full h-full object-cover"
     />
   </SwiperSlide>
   <SwiperSlide>
     <img
-      src="/carousel2.jpg"
+      src="carousel2.jpg"
       alt="Carousel 2"
       className="w-full h-full object-cover"
     />
   </SwiperSlide>
   <SwiperSlide>
     <img
-      src="/carousel3.jpg"
+      src="carousel3.jpg"
       alt="Carousel 3"
       className="w-full h-full object-cover"
     />
   </SwiperSlide>
   <SwiperSlide>
     <img
-      src="/carousel4.jpg"
+      src="carousel4.jpg"
       alt="Carousel 4"
       className="w-full h-full object-cover"
     />
   </SwiperSlide>
   <SwiperSlide>
     <img
-      src="/carousel5.jpg"
+      src="carousel5.jpg"
       alt="Carousel 5"
       className="w-full h-full object-cover"
     />
   </SwiperSlide>
   <SwiperSlide>
     <img
-      src="/carousel6.jpg"
+      src="carousel6.jpg"
       alt="Carousel 6"
       className="w-full h-full object-cover"
     />

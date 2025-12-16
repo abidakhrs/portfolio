@@ -243,44 +243,60 @@ const Projects = ({ projects, onSeeMore }: ProjectsProps) => {
           </div>
         )}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project) => (
-            <Card key={project.id}>
-              <div className="h-48 overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex justify-between items-start mb-2">
-                  <h3 className="text-xl font-bold text-gray-800 dark:text-white">{project.title}</h3>
-                  <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs font-semibold px-2.5 py-0.5 rounded">
-                    {project.category}
-                  </span>
-                </div>
-                <h4 className="text-blue-600 dark:text-blue-400 font-medium mb-3">{project.subtitle}</h4>
-                <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+  {filteredProjects.map((project) => (
+    <Card key={project.id} className="flex flex-col h-full">
+      <div className="h-48 overflow-hidden">
+        <img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+        />
+      </div>
+      <div className="p-6 flex flex-col flex-1 justify-between">
+        <div>
+          <div className="flex justify-between items-start mb-2">
+            <h3 className="text-xl font-bold text-gray-800 dark:text-white">{project.title}</h3>
+            <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs font-semibold px-2.5 py-0.5 rounded">
+              {project.category}
+            </span>
+          </div>
+          <h4 className="text-blue-600 dark:text-blue-400 font-medium mb-3">{project.subtitle}</h4>
+          <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
 
-                {/* Technology tags */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech, index) => {
-                    const { icon, color } = getTechIcon(tech);
-                    return (
-                      <IconTag
-                        key={index}
-                        icon={icon}
-                        text={tech}
-                        color={color}
-                      />
-                    );
-                  })}
-                </div>
-              </div>
-            </Card>
-          ))}
+          {/* Technology tags */}
+          <div className="flex flex-wrap gap-2 mb-4">
+            {project.technologies.map((tech, index) => {
+              const { icon, color } = getTechIcon(tech);
+              return (
+                <IconTag
+                  key={index}
+                  icon={icon}
+                  text={tech}
+                  color={color}
+                />
+              );
+            })}
+          </div>
         </div>
+
+        {/* View Project Button */}
+        <button
+          onClick={() => project.url && window.open(project.url, "_blank")}
+          disabled={!project.url}
+          className={`mt-4 px-4 py-2 rounded font-medium text-white transition-colors duration-300
+            ${project.url 
+              ? "bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 cursor-pointer" 
+              : "bg-gray-400 cursor-not-allowed"}`
+          }
+        >
+          View Project
+        </button>
+      </div>
+    </Card>
+  ))}
+</div>
+
 
         {/* See More Button - only show on home page */}
         {onSeeMore && (

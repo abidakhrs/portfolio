@@ -6,33 +6,23 @@ import ProjectsPage from './pages/Projects/Projects';
 import Experience from './pages/Experience/Experience';
 import Contact from './pages/Contact/Contact';
 
-export const router = createBrowserRouter([
+export const router = createBrowserRouter(
+  [
+    {
+      path: '/',
+      element: <RootLayout />,
+      children: [
+        { path: '/', element: <Home /> },
+        { path: '/about', element: <About /> },
+        { path: '/projects', element: <ProjectsPage /> },
+        { path: '/experience', element: <Experience /> },
+        { path: '/contact', element: <Contact /> },
+      ],
+    },
+  ],
   {
-    path: '/',
-    element: <RootLayout />,
-    children: [
-      {
-        path: '/',
-        element: <Home />,
-      },
-      {
-        path: '/about',
-        element: <About />,
-      },
-      {
-        path: '/projects',
-        element: <ProjectsPage />,
-      },
-      {
-        path: '/experience',
-        element: <Experience />,
-      },
-      {
-        path: '/contact',
-        element: <Contact />,
-      },
-    ],
-  },
-]);
+    basename: '/portfolio',   // 👈 this is the key for GitHub Pages
+  }
+);
 
 export default router;

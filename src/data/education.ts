@@ -16,7 +16,7 @@ export const mockEducationData: EducationItem[] = [
     degree: "Bachelor of Computer Science (Computer System & Networking)",
     institution: "Universiti Malaysia Pahang Al-Sultan Abdullah",
     description: "Focused on software development, networking, and web applications. Gained practical experience through projects and internships.",
-    logo: "/ump2.jpg"
+    logo: "ump2.jpg"
   },
   {
     id: 2,
@@ -24,6 +24,6 @@ export const mockEducationData: EducationItem[] = [
     degree: "Diploma of Computer Science",
     institution: "Universiti Malaysia Pahang Al-Sultan Abdullah",
     description: "Covered foundational computer science concepts, programming, and system administration.",
-    logo: "/ump.jpg"
+    logo: "ump.jpg"
   }
 ];

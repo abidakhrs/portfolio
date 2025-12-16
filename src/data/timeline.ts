@@ -18,7 +18,7 @@ export const mockTimelineData: TimelineItem[] = [
     companyInitials: "DC",
     companyColor: "bg-gradient-to-r from-blue-700 to-teal-500", // Custom color for Deloitte
     description: "Developed a scalable POC banking application using Micro front-end architecture and React Native, enhancing modularity and user experience. Collaborated with professional mentors and team members to deliver high-quality, maintainable features. Streamlined development workflow using Git for version control.",
-    image: "/deloitte.jpg" // Placeholder
+    image: "deloitte.jpg" // Placeholder
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ export const mockTimelineData: TimelineItem[] = [
     companyInitials: "CS",
     companyColor: "bg-gradient-to-r from-green-500 to-lime-600", // Custom color for CyberSphere
     description: "Developed DietMate, an innovative food diary and diet management web application. Coordinated task distribution and project timelines among team members. Delivered monthly progress reports and updates in team meetings.",
-    image: "/cybersphere.jpeg" // Placeholder
+    image: "cybersphere.jpeg" // Placeholder
   },
   {
     id: 3,
@@ -38,7 +38,7 @@ export const mockTimelineData: TimelineItem[] = [
     companyInitials: "FS",
     companyColor: "bg-gradient-to-r from-orange-500 to-yellow-600", // Custom color for FIFWAY System
     description: "Developed an administration system for disaster management. Assisted in client meetings and user training sessions to gather requirements and ensure smooth system adoption. Prepared comprehensive user manuals tailored for different user groups.",
-    image: "/fifway.png" // Placeholder
+    image: "fifway.png" // Placeholder
   },
   {
     id: 4,
@@ -48,6 +48,6 @@ export const mockTimelineData: TimelineItem[] = [
     companyInitials: "FS",
     companyColor: "bg-gradient-to-r from-orange-500 to-yellow-600", // Reusing color for same company
     description: "Designed and developed InfoBencanaJKMv2, a web-based administration system built with Bootstrap, jQuery, HTML, CSS, and JavaScript. Implemented backend functionality using PHP and MySQL. Collaborated closely with my professional team lead to refine system features.",
-    image: "/fifway.png" // Placeholder
+    image: "fifway.png" // Placeholder
   }
 ];
